@@ -4,6 +4,7 @@ emoji: 🧠
 colorFrom: blue
 colorTo: slate
 sdk: docker
+app_port: 7860
 pinned: false
 ---
 # NeuroDiag AI: Hybrid Multi-Task Brain Tumor Analysis System

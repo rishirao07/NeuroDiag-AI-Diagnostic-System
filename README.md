@@ -80,7 +80,6 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ├── inference.py         # AI Inference, Architecture, & Insight Engine
 ├── index.html           # Professional Medical UI
 ├── requirements.txt     # Locked Dependency Versions
-├── Dockerfile           # Deployment configuration for Cloud/Render
 ├── samples/             # Clinical test images (MRI_1, CT_1, etc.)
 └── *.pth                # Trained Weights (Epoch 21 - 97.4% Acc)
 ```

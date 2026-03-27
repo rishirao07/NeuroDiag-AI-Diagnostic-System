@@ -20,15 +20,15 @@ pinned: false
 
 ### 1. Unified Diagnostic Interface
 The primary workstation allows for seamless image uploads and real-time visualization.
-![Frontend UI](./Frontend%20UI.png)
+[![Frontend-UI.png](https://i.postimg.cc/WzsTBCXn/Frontend-UI.png)](https://postimg.cc/wy4CJfKy)
 
 ### 2. Multi-Task Segmentation & Classification
-The AI identifies the tumor type and generates a pixel-perfect **Crimson Red** mask overlay to delineate boundaries.
-![Segmented Results](./Segmented%20Results.png)
+The AI identifies the tumor type and generates a pixel-perfect **Crimson Red** mask overlay to delineate boundaries. 
+[![Segmented-Results.png](https://i.postimg.cc/y8ZtTnTD/Segmented-Results.png)](https://postimg.cc/XrnsjfmW)
 
 ### 3. Clinical Insight Engine
 Automated analysis provides the tumor description, severity grading, and academic next-step recommendations.
-![Clinical Insights](./Description%20About%20The%20Tumor.png)
+[![Description-About-The-Tumor.png](https://i.postimg.cc/T2NsMB7h/Description-About-The-Tumor.png)](https://postimg.cc/9zTbygjj)
 
 ---
 

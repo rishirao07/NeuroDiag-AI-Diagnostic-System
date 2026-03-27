@@ -1,0 +1,11 @@
+# Ignore the 135MB AI model
+brain_tumor_99plus_epoch_21.pth
+
+# Ignore the project screenshots and technical report
+assets/
+*.pdf
+*.ipynb
+__pycache__/
+
+# Ignore the environment
+.venv/

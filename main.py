@@ -1,10 +1,7 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import HTMLResponse
-import base64
+from fastapi.responses import HTMLResponse, FileResponse
 import os
-
-# Import the placeholder inference module
 import inference
 
 app = FastAPI(title="Brain Tumor Diagnostic API")
@@ -20,34 +17,24 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup_event():
-    # Load the proxy model weights during startup
+    # Load the model weights into memory on server start
     inference.load_model()
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root():
-    """
-    Serve the main index.html file containing the frontend.
-    """
-    html_file = os.path.join(os.path.dirname(__file__), "index.html")
-    if os.path.exists(html_file):
-        with open(html_file, "r", encoding="utf-8") as f:
-            return f.read()
-    return HTMLResponse(content="<h1>index.html not found!</h1>", status_code=404)
+    # Serves your professional index.html dashboard
+    index_path = os.path.join(os.path.dirname(__file__), "index.html")
+    return FileResponse(index_path)
 
 @app.post("/api/predict")
 async def predict(file: UploadFile = File(...)):
-    """
-    Endpoint for uploading Brain MRI or CT scans.
-    Performs placeholder inference and returns classification logic
-    with a base64 mask.
-    """
     if not file.content_type.startswith("image/"):
         raise HTTPException(status_code=400, detail="File must be an image.")
 
     try:
         image_bytes = await file.read()
         
-        # Process the image through our inference placeholder module
+        # Process the image through the inference engine
         result = inference.process_image(image_bytes)
         
         return {
@@ -61,3 +48,9 @@ async def predict(file: UploadFile = File(...)):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    import uvicorn
+    # Important: Hugging Face Spaces strictly use port 7860
+    port = int(os.environ.get("PORT", 7860))
+    uvicorn.run(app, host="0.0.0.0", port=port)

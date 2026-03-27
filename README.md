@@ -1,3 +1,11 @@
+---
+title: NeuroDiag AI
+emoji: 🧠
+colorFrom: blue
+colorTo: slate
+sdk: docker
+pinned: false
+---
 # NeuroDiag AI: Hybrid Multi-Task Brain Tumor Analysis System
 
 ![Medical AI](https://img.shields.io/badge/Status-Clinical--Ready-emerald) ![Python](https://img.shields.io/badge/Python-3.11-blue) ![PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange) ![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688)
